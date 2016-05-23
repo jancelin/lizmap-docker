@@ -1,7 +1,7 @@
 
 ### building from git
 
-*create a directory with:
+* create a directory with:
 ```
 cd /home &&
 mkdir -p lizmap/{qgis_project,run/log,cache} &&
