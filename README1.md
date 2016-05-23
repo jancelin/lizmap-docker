@@ -1,7 +1,7 @@
 
 ### building from git
 
-* create a directory with:
+* Create directory with:
 ```
 cd /home &&
 mkdir -p lizmap/{qgis_project,run/log,cache} &&
@@ -9,12 +9,12 @@ sudo chown :www-data /home/lizmap -R &&
 sudo chmod 775 /home/lizmap -R
 ```
 
-*build image:
+* Build image:
 ```
 docker build -t lizmap_nginx git://github.com/3liz/lizmap-docker
 ```
 
-*run container:
+* Run container:
 ```
 docker run --restart="always" --name "lizmap_nginx" -p 8082:80 -p 8200:8200 -d -t \
 -v /home/lizmap/qgis_project:/home \
@@ -23,18 +23,18 @@ docker run --restart="always" --name "lizmap_nginx" -p 8082:80 -p 8200:8200 -d -
 lizmap_nginx
 ```
 
-*go to:
+* Go to:
 ```
 http://localhost:8082/admin.php/admin/config/editSection
 ```
-*create Path to local directory :  /home
+* Create Path to local directory :  /home
 
-*go to:
+* Go to:
 ```
 http://localhost:8082/admin.php/admin/config/editServices
 ```
-*edit URL WMS: http://127.0.0.1:8200/cgi-bin/qgis_mapserv.fcgi
+* Edit URL WMS: http://127.0.0.1:8200/cgi-bin/qgis_mapserv.fcgi
 
-*Copy yours .qgs & .qgs.cfg to /home/lizmap/qgis_project
+* Copy yours .qgs & .qgs.cfg to /home/lizmap/qgis_project
 
-*go to http://localhost:8082 and enjoy.
+* Go to http://localhost:8082 and enjoy.
