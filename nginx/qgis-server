@@ -3,7 +3,7 @@
 # ALL CHANGES WILL BE LOST
 #-----------------------------------
 
-# Nginx config far qgis-mapserver
+# Nginx config for qgis-server
 server {
     listen 8200;
     server_name qgis;
