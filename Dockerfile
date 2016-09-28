@@ -16,8 +16,8 @@ RUN apt-get -y update
 RUN sudo dpkg --configure -a
 #--------------------------------------------------------------------------------------------
 # Install stuff
-RUN apt-get -t stretch install -y qgis-server unzip nginx supervisor php5-fpm php5-curl php5-cli php5-sqlite \
-    php5-pgsql php5-gd php5-ldap --force-yes
+RUN apt-get -t stretch install --force-yes -y qgis-server unzip nginx supervisor php5-fpm php5-curl php5-cli php5-sqlite \
+    php5-pgsql php5-gd php5-ldap 
 
 ADD supervisor/supervisord.conf /etc/supervisor/supervisord.conf
 ADD supervisor/php.conf supervisor/nginx.conf supervisor/qgis.conf /etc/supervisor/conf.d/ 
