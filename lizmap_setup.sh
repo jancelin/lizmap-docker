@@ -5,7 +5,7 @@ set -e
 
 LIZMAP_HOME=/srv/lizmap-web-client
 
-unzip /srv/master.zip -d /srv/
+unzip /srv/3.0.3.zip -d /srv/
 mv /srv/lizmap-web-client-master $LIZMAP_HOME
 rm /srv/master.zip
 
