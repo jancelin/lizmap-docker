@@ -7,7 +7,7 @@ RUN  dpkg-divert --local --rename --add /sbin/initctl
 # add qgis to sources.list
 #RUN echo "deb http://http.debian.net/debian jessie main" >> /etc/apt/sources.list
 # add sid
-RUN echo "deb http://http.debian.net/debian experimental  main " >> /etc/apt/sources.list
+RUN echo "deb http://http.debian.net/debian stretch  main " >> /etc/apt/sources.list
 RUN gpg --keyserver pgpkeys.mit.edu --recv-key 7638D0442B90D010
 RUN gpg -a --export 7638D0442B90D010 | sudo apt-key add -
 RUN gpg --keyserver pgpkeys.mit.edu --recv-key 8B48AD6246925553
@@ -15,7 +15,7 @@ RUN gpg -a --export 8B48AD6246925553 | sudo apt-key add -
 RUN apt-get -y update
 #--------------------------------------------------------------------------------------------
 # Install stuff
-RUN apt-get -t experimental install -y qgis-server unzip nginx supervisor php5-fpm php5-curl php5-cli php5-sqlite \
+RUN apt-get -t stretch install -y qgis-server unzip nginx supervisor php5-fpm php5-curl php5-cli php5-sqlite \
     php5-pgsql php5-gd php5-ldap --force-yes
 
 ADD supervisor/supervisord.conf /etc/supervisor/supervisord.conf
