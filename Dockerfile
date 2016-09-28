@@ -5,16 +5,14 @@ RUN  export DEBIAN_FRONTEND=noninteractive
 ENV  DEBIAN_FRONTEND noninteractive
 RUN  dpkg-divert --local --rename --add /sbin/initctl
 # add qgis to sources.list
-#RUN echo "deb http://qgis.org/debian jessie main" >> /etc/apt/sources.list
-#RUN gpg --keyserver keyserver.ubuntu.com --recv 3FF5FFCAD71472C4
-#RUN gpg --export --armor 3FF5FFCAD71472C4 | apt-key add -
+RUN echo "deb http://qgis.org/debian jessie main" >> /etc/apt/sources.list
+RUN gpg --keyserver keyserver.ubuntu.com --recv 3FF5FFCAD71472C4
+RUN gpg --export --armor 3FF5FFCAD71472C4 | apt-key add -
 # add sid
 RUN echo "deb http://http.debian.net/debian sid main " >> /etc/apt/sources.list
 RUN gpg --keyserver pgpkeys.mit.edu --recv-key 7638D0442B90D010
 RUN gpg -a --export 7638D0442B90D010 | sudo apt-key add -
-RUN apt-get -y autoclean
 RUN apt-get -y update
-RUN apt-get -y upgrade
 #--------------------------------------------------------------------------------------------
 # Install stuff
 RUN apt-get -t sid install -y qgis-server unzip nginx supervisor php5-fpm php5-curl php5-cli php5-sqlite \
