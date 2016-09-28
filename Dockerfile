@@ -13,6 +13,7 @@ RUN gpg -a --export 7638D0442B90D010 | sudo apt-key add -
 RUN gpg --keyserver pgpkeys.mit.edu --recv-key 8B48AD6246925553
 RUN gpg -a --export 8B48AD6246925553 | sudo apt-key add -
 RUN apt-get -y update
+RUN sudo dpkg --configure -a
 #--------------------------------------------------------------------------------------------
 # Install stuff
 RUN apt-get -t sid install -y qgis-server unzip nginx supervisor php5-fpm php5-curl php5-cli php5-sqlite \
