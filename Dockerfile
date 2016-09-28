@@ -13,8 +13,8 @@ RUN echo "deb http://http.debian.net/debian sid main " >> /etc/apt/sources.list
 RUN gpg --keyserver pgpkeys.mit.edu --recv-key 7638D0442B90D010
 RUN gpg -a --export 7638D0442B90D010 | sudo apt-key add -
 RUN apt-get -y update
-RUN apt-get autoremove -y libc6 
-RUN apt-get -t sid install libc6
+RUN apt-get autoclean
+RUN apt-get -t sid install vim
 #--------------------------------------------------------------------------------------------
 # Install stuff
 RUN apt-get -t sid install -y qgis-server unzip nginx supervisor php5-fpm php5-curl php5-cli php5-sqlite \
