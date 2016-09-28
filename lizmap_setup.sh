@@ -6,8 +6,8 @@ set -e
 LIZMAP_HOME=/srv/lizmap-web-client
 
 unzip /srv/3.0.3.zip -d /srv/
-mv /srv/lizmap-web-client-master $LIZMAP_HOME
-rm /srv/master.zip
+mv /srv/3.0.3 $LIZMAP_HOME
+rm /srv/3.0.3.zip
 
 # Set rights & active config
 chmod +x $LIZMAP_HOME/lizmap/install/set_rights.sh
