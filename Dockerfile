@@ -1,5 +1,5 @@
 #--------- Generic stuff all our Dockerfiles should start with so we get caching ------------
-FROM resin/rpi-raspbian
+FROM resin/rpi-raspbian:jessie
 #MAINTAINER 3liz / docker-qgis_server-lizmap
 RUN  export DEBIAN_FRONTEND=noninteractive
 ENV  DEBIAN_FRONTEND noninteractive
@@ -13,11 +13,6 @@ RUN gpg -a --export 7638D0442B90D010 | sudo apt-key add -
 RUN gpg --keyserver pgpkeys.mit.edu --recv-key 8B48AD6246925553
 RUN gpg -a --export 8B48AD6246925553 | sudo apt-key add -
 RUN apt-get -y update
-#RUN echo -e '#!/bin/bash\n/bin/true' > /var/lib/dpkg/info/libc6:armhf.postrm
-#ADD libc6_2.24-3_armhf.deb /
-#RUN dpkg -i --force-all /libc6_2.24-3_armhf.deb
-RUN apt-get upgrade libnih-dbus1 libc-bin libnih1 libc6
-
 #--------------------------------------------------------------------------------------------
 # Install stuff
 RUN apt-get -t sid -f install -y qgis-server unzip nginx supervisor php5-fpm php5-curl php5-cli php5-sqlite \
