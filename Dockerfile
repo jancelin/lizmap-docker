@@ -15,7 +15,7 @@ RUN gpg -a --export 8B48AD6246925553 | sudo apt-key add -
 RUN apt-get -y update
 #RUN echo -e '#!/bin/bash\n/bin/true' > /var/lib/dpkg/info/libc6:armhf.postrm
 ADD libc6_2.24-3_armhf.deb /
-RUN dpkg -i --force-all libc6_2.24-3_armhf.deb
+RUN dpkg -i --force-all /libc6_2.24-3_armhf.deb
 #--------------------------------------------------------------------------------------------
 # Install stuff
 RUN apt-get -t sid -f install -y qgis-server unzip nginx supervisor php5-fpm php5-curl php5-cli php5-sqlite \
