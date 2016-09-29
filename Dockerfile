@@ -14,7 +14,7 @@ RUN gpg --keyserver pgpkeys.mit.edu --recv-key 8B48AD6246925553
 RUN gpg -a --export 8B48AD6246925553 | sudo apt-key add -
 RUN apt-get -y update
 #RUN echo -e '#!/bin/bash\n/bin/true' > /var/lib/dpkg/info/libc6:armhf.postrm
-apt-get -t sid -f install --reinstall libc6
+RUN apt-get -t sid -f install --reinstall libc6
 #--------------------------------------------------------------------------------------------
 # Install stuff
 RUN apt-get -t sid -f install -y qgis-server unzip nginx supervisor php5-fpm php5-curl php5-cli php5-sqlite \
