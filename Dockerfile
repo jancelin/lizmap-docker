@@ -13,10 +13,10 @@ RUN gpg -a --export 7638D0442B90D010 | sudo apt-key add -
 RUN gpg --keyserver pgpkeys.mit.edu --recv-key 8B48AD6246925553
 RUN gpg -a --export 8B48AD6246925553 | sudo apt-key add -
 RUN apt-get -y update
-RUN sudo dpkg --configure -a
+RUN echo "exit 0" >> /var/lib/dpkg/info/libc6:armhf.postrm
 #--------------------------------------------------------------------------------------------
 # Install stuff
-RUN apt-get -t sid install -y --force-yes qgis-server=2.14.7+dfsg-1 unzip nginx supervisor php5-fpm php5-curl php5-cli php5-sqlite \
+RUN apt-get -t sid install -y --force-yes qgis-server unzip nginx supervisor php5-fpm php5-curl php5-cli php5-sqlite \
     php5-pgsql php5-gd php5-ldap 
 
 ADD supervisor/supervisord.conf /etc/supervisor/supervisord.conf
