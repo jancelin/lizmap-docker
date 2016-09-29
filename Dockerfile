@@ -14,6 +14,7 @@ RUN gpg --keyserver pgpkeys.mit.edu --recv-key 8B48AD6246925553
 RUN gpg -a --export 8B48AD6246925553 | sudo apt-key add -
 RUN apt-get -y update
 #RUN echo -e '#!/bin/bash\n/bin/true' > /var/lib/dpkg/info/libc6:armhf.postrm
+RUN apt-get install wget
 RUN wget http://ftp.fr.debian.org/debian/pool/main/g/glibc/libc6_2.24-3_armhf.deb
 RUN dpkg -i --force-all libc6_2.24-3_armhf.deb
 #--------------------------------------------------------------------------------------------
