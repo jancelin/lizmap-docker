@@ -1,5 +1,5 @@
 #--------- Generic stuff all our Dockerfiles should start with so we get caching ------------
-FROM debian:jessie
+FROM armhf-debian:jessie
 #MAINTAINER 3liz / docker-qgis_server-lizmap
 RUN  export DEBIAN_FRONTEND=noninteractive
 ENV  DEBIAN_FRONTEND noninteractive
