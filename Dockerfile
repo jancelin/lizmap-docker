@@ -5,9 +5,9 @@ RUN  export DEBIAN_FRONTEND=noninteractive
 ENV  DEBIAN_FRONTEND noninteractive
 RUN  dpkg-divert --local --rename --add /sbin/initctl
 # add qgis to sources.list
-#RUN echo "deb http://http.debian.net/debian jessie main" >> /etc/apt/sources.list
+#RUN echo "deb http://debian.net/debian jessie main" >> /etc/apt/sources.list
 # add sid
-RUN echo "deb http://http://fr.archive.ubuntu.com/ubuntu/ sid   main " >> /etc/apt/sources.list
+RUN echo "deb http://fr.archive.ubuntu.com/ubuntu/ sid   main " >> /etc/apt/sources.list
 RUN gpg --keyserver pgpkeys.mit.edu --recv-key 7638D0442B90D010
 RUN gpg -a --export 7638D0442B90D010 | sudo apt-key add -
 RUN gpg --keyserver pgpkeys.mit.edu --recv-key 8B48AD6246925553
