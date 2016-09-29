@@ -16,7 +16,7 @@ RUN apt-get -y update
 #RUN echo -e '#!/bin/bash\n/bin/true' > /var/lib/dpkg/info/libc6:armhf.postrm
 #ADD libc6_2.24-3_armhf.deb /
 #RUN dpkg -i --force-all /libc6_2.24-3_armhf.deb
-RUN apt-get upgrade libc-bin libnih1 libc6
+RUN apt-get upgrade libnih-dbus1 libc-bin libnih1 libc6
 
 #--------------------------------------------------------------------------------------------
 # Install stuff
