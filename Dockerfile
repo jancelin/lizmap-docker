@@ -1,9 +1,9 @@
 #--------- Generic stuff all our Dockerfiles should start with so we get caching ------------
 FROM armv7/armhf-debian
 #MAINTAINER 3liz / docker-qgis_server-lizmap
-RUN  export DEBIAN_FRONTEND=noninteractive
-ENV  DEBIAN_FRONTEND noninteractive
-RUN  dpkg-divert --local --rename --add /sbin/initctl
+#RUN  export DEBIAN_FRONTEND=noninteractive
+#ENV  DEBIAN_FRONTEND noninteractive
+#RUN  dpkg-divert --local --rename --add /sbin/initctl
 # add qgis to sources.list
 #RUN echo "deb http://http.debian.net/debian jessie main" >> /etc/apt/sources.list
 # add sid
